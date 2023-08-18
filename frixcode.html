@@ -1,0 +1,192 @@
+<!-- webtv code by frix -- please credit me if you intend on using it -->
+<style>
+html {
+	background:black;
+	color:white;
+	font-family:Helvetica, sans-serif;
+    font-size:15.5px;
+}
+/* links */
+a:hover, [href]:hover {
+    box-shadow: inset -1px -1px .25px #aeaeae, 
+                0 0 1px 2px #e9d33c, 
+                0 0 0 2px #a59e00,
+                -1px -1px .5px 2px #aeaeae,
+                0 0 2px 2px black, -1px -1px 2px 2px black,
+                inset 0 0 1px black;
+    box-sizing: border-box;
+    border-radius:1px;
+    padding:1px 4.75px;
+    margin:-1px -4.75px;
+}
+
+a:active, [href]:active {
+    box-shadow: inset -1px -1px .25px #aeaeae, 
+                0 0 1px 2px #2ada00, 
+                0 0 0 2px #20b500,
+                -1px -1px .5px 2px #aeaeae,
+                0 0 2px 2px black, -1px -1px 2px 2px black,
+                inset 0 0 1px black;
+    box-sizing: border-box;
+    border-radius:1px;
+    padding:1px 4.75px;
+    margin:-1px -4.75px;
+}
+
+/* progress bar */
+progress {
+    box-sizing: border-box;
+    border:0;
+    box-shadow:inset 1px 1px 0 #202020,
+               inset -1px -1px 0 #666666,
+               inset 2px 2px 0 #202020,
+               inset -2px -2px 0 #666666;
+    background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+    background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+    padding:3px 4px;
+    height:17px;
+}
+
+progress[value]::-moz-progress-bar {
+    background: repeating-linear-gradient(145deg, #00a500, 2px, #006f00, #006f00, 6px, #00a500 8px);
+    border-top:1px solid #003c00;
+    border-bottom:1px solid #003c00;
+}
+
+/* button */
+button {
+    font-family:Helvetica, sans-serif;
+    font-size:14.5px;
+    border:0;
+    background:#b5b5b5;
+    border-radius:8px;
+    box-shadow:inset 1px 1px 1px .25px #b5b5b5,
+               inset 2px 2px .25px white,
+               inset -1px -1px 2px #444444, 
+               0 0 1px black, 0 0 1px 2px #333333, 
+               1px 1px 0 2px #444444, 0 0 0 2px black;
+    padding: 0 12px;
+    min-width: 75px;
+    min-height: 23px;
+}
+
+/* below code only exists as a work around for the button border, which seems impossible to do in css */
+a:hover {
+	padding: 3px 4.75px;
+	margin: -3px -4.75px;
+}
+
+/* window/alert */
+
+.alert {
+    font-family:Helvetica, sans-serif;
+    font-size:15.5px;
+    border-radius: 6px;
+    display:inline-block;
+    background: #4e4e4e;
+    box-shadow:inset 1px 1px 1px #4e4e4e, 
+               inset 2px 2px 2px 2px #969696,
+               inset -1px -1px 1px #4e4e4e, 
+               inset -2px -2px 2px 2px #202020;
+    padding:1px;
+    
+}
+
+.alert-content {
+    margin: 15px;
+}
+
+.alert-content hr {
+    border-radius: 6px;
+    border:0;
+    margin:5px;
+    box-shadow: 1px 1px 1px #4e4e4e, 
+                1px 1px 2px 2px #969696,
+                -1px -1px 1px #4e4e4e, 
+                -1px -1px 2px 2px #202020;
+}
+
+.alert-content p {
+    color:#ffe13c;
+    text-shadow:1px 1px black;
+	margin: 15px 5px;
+}
+
+.field-row {
+    display: flex;
+    align-items: center;
+}
+
+.field-row p {
+	margin: 0 5px;
+}
+table.webtv-ui {
+	width:564px;
+	background: -webkit-linear-gradient(90deg, rgb(91, 91, 91), rgb(35, 35, 35));
+	background: linear-gradient(90deg, rgb(91, 91, 91), rgb(35, 35, 35));
+	padding: 2px 6px;
+}
+
+table.webtv-ui td {
+	border-radius: 4px;
+	padding: 2px 8px;
+}
+table.webtv-ui-border {
+	width:564px;
+	padding: 1px;
+	background: -webkit-linear-gradient(90deg, rgb(188, 188, 188), rgb(102, 102, 102));
+	background: linear-gradient(90deg, rgb(188, 188, 188), rgb(102, 102, 102));
+	box-shadow: inset 0 0 1px #232323;
+}
+
+table.webtv-ui td.title {
+	width: 430px;
+	background-color: black;
+	background: -webkit-linear-gradient(90deg, rgb(42, 42, 42), rgb(0, 0, 0));
+	background: linear-gradient(90deg, rgb(42, 42, 42), rgb(0, 0, 0));
+	color: #ffe13c;
+	text-shadow: 1px 1px black;
+}
+table.webtv-ui td.spacer {
+	width:69px;
+	background:transparent;
+}
+table.webtv-ui td.load span {
+	width: 36px;
+	box-shadow: -1px -1px 2px 1px #161616, 
+				1px 1px 2px 1px #5e5e5e, 
+				inset 0 14px 0 -5px black, 
+				inset 0 -14px 0 -5px black;
+	background: #00a500;
+	padding: 2px;
+	display: inline-block;
+	height: 15px;
+}
+</style>
+<button>Button 1</button>
+<progress max="100" value="25"></progress><br/>
+<p>this is some text, <a href="">this is a link,</a> <span href="#">while this is text disguised as a link.</span></p>
+<div class="alert">
+    <div class="alert-content">
+		<section class="field-row" style="justify-content: flex-end;margin: 15px auto;">
+            <img src="./img/webtv_window_logo.png" style="padding: 10px 8px;" />
+            <p style="width:190px;">The item chosen contains so much information that it can't be used.</p>
+        </section>
+        <hr><br/>
+        <section class="field-row" style="justify-content: flex-end">
+            <a><button>Continue</button></a>
+        </section>
+    </div>
+</div>
+<table class="webtv-ui-border">
+	<tr></tr>
+</table>
+<table class="webtv-ui">
+	<tr>
+		<td class="title">Home for webtvuser</td>
+		<td class="spacer"></td>
+		<td class="load">
+			<span></span>
+		</td>
+	</tr>
+</table>
